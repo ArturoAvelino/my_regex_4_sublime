@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Advanced CSV",
+		"BracketHighlighter",
+		"Expand Selection to Quotes",
+		"Expand Selection to Whitespace",
+		"Language - French - Français",
+		"Language - Spanish",
+		"Package Control",
+		"RegReplace",
+		"Sepiarize Color Scheme",
+		"SideBarEnhancements",
+		"Sync View Scroll",
+		"Text Marker",
+		"Text Pastry",
+		"Toggle the View Read-Only",
+	],
+}

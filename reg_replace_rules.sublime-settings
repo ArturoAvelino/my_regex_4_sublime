@@ -1,0 +1,1518 @@
+{
+    "replacements":
+    {
+        "remove_closing_ps":
+        {
+            "case": false,
+            "find": "</p>",
+            "greedy": true,
+            "replace": ""
+        },
+        "remove_opening_ps":
+        {
+            "case": false,
+            "find": "<p>",
+            "greedy": true,
+            "replace": ""
+        },
+        "trailing_spaces":
+        {
+            "find": "[\\t ]+$",
+            "name": "trailing_spaces",
+            "replace": ""
+        },
+
+        //------------ EMOJI ---------------
+
+        // ok!
+        "remove_emojis_by_image":
+        {
+            "find": "(😀|😂)",
+            "name": "remove_emojis_by_image",
+            "replace": " "
+        },
+
+        // Taken the list from:
+        // https://stackoverflow.com/questions/24840667/what-is-the-regex-to-extract-all-the-emojis-from-a-string
+        "remove_emojis":
+        {
+            "find": "(?:[\uD83C\uDF00-\uD83D\uDDFF]|[\uD83E\uDD00-\uD83E\uDDFF]|[\uD83D\uDE00-\uD83D\uDE4F]|[\uD83D\uDE80-\uD83D\uDEFF]|[\u2600-\u26FF]\uFE0F?|[\u2700-\u27BF]\uFE0F?|\u24C2\uFE0F?|[\uD83C\uDDE6-\uD83C\uDDFF]{1,2}|[\uD83C\uDD70\uD83C\uDD71\uD83C\uDD7E\uD83C\uDD7F\uD83C\uDD8E\uD83C\uDD91-\uD83C\uDD9A]\uFE0F?|[\u0023\u002A\u0030-\u0039]\uFE0F?\u20E3|[\u2194-\u2199\u21A9-\u21AA]\uFE0F?|[\u2B05-\u2B07\u2B1B\u2B1C\u2B50\u2B55]\uFE0F?|[\u2934\u2935]\uFE0F?|[\u3030\u303D]\uFE0F?|[\u3297\u3299]\uFE0F?|[\uD83C\uDE01\uD83C\uDE02\uD83C\uDE1A\uD83C\uDE2F\uD83C\uDE32-\uD83C\uDE3A\uD83C\uDE50\uD83C\uDE51]\uFE0F?|[\u203C\u2049]\uFE0F?|[\u25AA\u25AB\u25B6\u25C0\u25FB-\u25FE]\uFE0F?|[\u00A9\u00AE]\uFE0F?|[\u2122\u2139]\uFE0F?|\uD83C\uDC04\uFE0F?|\uD83C\uDCCF\uFE0F?|[\u231A\u231B\u2328\u23CF\u23E9-\u23F3\u23F8-\u23FA]\uFE0F?|\uD83E\uDEE7)",
+            "name": "remove_emojis",
+            "replace": ""
+        },
+
+        "remove_emojis_tests":
+        {
+            "find": "(\uD83D\uDE00|\uD83E\uDEE7)",
+            "name": "remove_emojis_tests",
+            "replace": " "
+        },
+
+        //------------ REMOVE ---------------
+
+        "remove_empty_lines":
+        {
+            "find": "^[ \\t]*\n",
+            "name": "remove_empty_lines",
+            "replace": ""
+        },
+        "replace_two_or_more_empty_lines_by_one":
+        {
+            "find": "^\\s*\n{2,}",
+            "name": "replace_two_or_more_empty_lines_by_one",
+            "replace": "\n"
+        },
+        "replace_three_or_more_empty_lines_by_two":
+        {
+            "find": "^\\s*\n{3,}",
+            "name": "replace_three_or_more_empty_lines_by_two",
+            "replace": "\n\n"
+        },
+        "remove_consecutive_spaces":
+        {
+            "find": "\\s{2,}",
+            "name": "remove_consecutive_spaces",
+            "replace": " "
+        },
+        "remove_consecutive_spaces_but_ignore_newlines":
+        // Still to work out
+        {
+            "find": "(?<=\\S)\\s{2,}(?=\\S)",
+            "name": "remove_consecutive_spaces_but_ignore_newlines",
+            "replace": " "
+        },
+        "remove_ln_lines":
+        {
+            "find": "^# In\\[.*\n",
+            "name": "remove_ln_lines",
+            "replace": ""
+        },
+        "remove_old_lines":
+        {
+            "find": "^[ \\t]{0,}# (old|OLD|Old).*\n",
+            "name": "remove_old_lines",
+            "replace": ""
+        },
+        "remove_tmp_lines":
+        {
+            "find": "^[ \\t]{0,}# (tmp|TMP|Tmp).*\n",
+            "name": "remove_tmp_lines",
+            "replace": ""
+        },
+
+
+        "remove_end_pound_underscore_line_and_newline":
+        // Remove lines ending with "#_" flag.
+        // See "suffix_end_pound_underscore" command to know when this flag is
+        // used.
+        {
+            "find": "^.*#_\n",
+            // ok. "find": "^.*#_$\n",
+            "name": "remove_end_pound_underscore_line_and_newline",
+            "replace": ""
+        },
+        "remove_end_pound_underscoreTwo_line":
+        {
+            "find": "^.*#__\n",
+            "name": "remove_end_pound_underscoreTwo_line",
+            "replace": "\n"
+        },
+        "remove_spaces_between_words":
+        {
+            "find": " ",
+            "name": "remove_spaces_between_words",
+            "replace": ""
+        },
+        "remove_anynumber_of_underscores_at_end_of_line":
+        {
+            "find": "_*$",
+            "name": "remove_anynumber_of_underscores_at_end_of_line",
+            "replace": ""
+        },
+
+        "remove_a_given_symbol_located_at_end_of_line":
+        {
+            // Below, the symbol of my choice to replace is "|", but I can replace
+            // it by any other symbol that I may want.
+            "find": "\\|[ \\t]*$",
+            "name": "remove_a_given_symbol_located_at_end_of_line",
+            "replace": ""
+        },
+
+        "remove_end_pound_underscore_flag":
+        // Remove the flag "#_" at the end of lines.
+        // Note that this command removes only the -flag-, not the line.
+        // See "suffix_end_pound_underscore" command to know when this flag is
+        // used.
+            {
+                // old. "find": "#_[ \\t]{0,}$\n",
+                "find": "#_[ \\t]*$",
+                "name": "remove_end_pound_underscore_flag",
+                "replace": ""
+            },
+
+        "remove_end_pound_underscore_flag_from_empty_lines":
+            {
+                "find": "^[ \\t]*#_[ \\t]*\n",
+                "name": "remove_end_pound_underscore_flag_from_empty_lines",
+                "replace": "\n"
+            },
+
+        "remove_duplicated_end_pound_underscore_flag":
+            {
+                // Leave just one "#_" at the end of line if there are two.
+                // old1. "find": "#_[ \\t]*#_[ \\t]*$\n",
+                "find": "#_[ \\t]*#_[ \\t]*$",
+                "name": "remove_duplicated_end_pound_underscore_flag",
+                "replace": "#_"
+            },
+
+
+        "remove_end_pound_equal_flag":
+        // Remove the #= flag from the end of the lines.
+        // Note that this command removes only the -flag-, not the line.
+        // For description of the use of "#=" flag, see "suffix_end_pound_equal"
+            {
+                "find": "#=[ \\t]*$",
+                "name": "remove_end_pound_equal_flag",
+                "replace": ""
+            },
+
+        "remove_end_pound_equal_flag_from_empty_lines":
+            {
+                "find": "^[ \\t]*#=[ \\t]*\n",
+                "name": "remove_end_pound_equal_flag_from_empty_lines",
+                "replace": "\n"
+            },
+
+        "remove_duplicated_end_pound_equal_flag":
+            {
+                // Leave just one "#=" at the end of line if there are two.
+                "find": "#=[ \\t]*#=[ \\t]*$",
+                "name": "remove_duplicated_end_pound_equal_flag",
+                "replace": "#="
+            },
+
+        "remove_end_pound_nb_flag":
+        // Remove the #nb flag from the end of the lines.
+        // Note that this command remove just the -flag-, not the line itself.
+        // See description of the use of the "#nb" symbol in
+        // the "suffix_end_pound_nb" command.
+            {
+                "find": "#nb[ \\t]*$",
+                "name": "remove_end_pound_nb_flag",
+                "replace": ""
+            },
+        "remove_end_pound_nb_from_empty_lines":
+        {
+            "find": "^[ \\t]*#nb[ \\t]*\n",
+            "name": "remove_end_pound_nb_from_empty_lines",
+            "replace": "\n"
+        },
+        "remove_duplicated_end_pound_nb_flag":
+        {
+            // Leave just one "#nb" at the end of line if there are two.
+            "find": "#nb[ \\t]*#nb[ \\t]*$",
+            "name": "remove_duplicated_end_pound_nb_flag",
+            "replace": "#nb"
+        },
+
+
+        "remove_begin_dash_symbol":
+        {
+            "find": "^([ \\t]*)-[ \\t]*",
+            "name": "remove_begin_dash_symbol",
+            "replace": "\\1"
+        },
+        "remove_begin_dash_symbol_of_empty_line":
+        {
+            "find": "^[ \\t]*-[ \\t]*$",
+            "name": "remove_begin_dash_symbol_of_empty_line",
+            "replace": ""
+        },
+
+
+        "remove_duplicated_words":
+        {
+            "find": "\\b(\\w+)\\s+\\1\\b",
+            // OK! In Sublime Text / Find menu, find with the regular expression option using: \b(\w+)\s+\1\b
+            // To also replace put "\1" in the Replace text box.
+            "name": "remove_duplicated_words",
+            "replace": "\\1"
+        },
+
+
+        //---------- REMOVE MARKED PARAGRAPHS ---------
+
+        "remove_marked_paragraph_1":
+        {
+            // tmp1. "find": "^\\s+$\n^([ \\t]*)Summary.*(?:\n\\1[ \\t]*\\S.*)+",
+            // tmp2. "find": "^\\s+$\n^([ \\t]*)Summary.*(?:\n[ \\t]*\\S.*)+",
+            "find": "^([ \\t]*)#d1==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d1<==",
+            "name": "remove_marked_paragraph_1",
+            "replace": ""
+        },
+        "remove_marked_paragraph_2":
+        {
+            "find": "^([ \\t]*)#d2==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d2<==",
+            "name": "remove_marked_paragraph_2",
+            "replace": ""
+        },
+        "remove_marked_paragraph_3":
+        {
+            "find": "^([ \\t]*)#d3==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d3<==",
+            "name": "remove_marked_paragraph_3",
+            "replace": ""
+        },
+        "remove_marked_paragraph_4":
+        {
+            "find": "^([ \\t]*)#d4==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d4<==",
+            "name": "remove_marked_paragraph_4",
+            "replace": ""
+        },
+        "remove_marked_paragraph_5":
+        {
+            "find": "^([ \\t]*)#d5==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d5<==",
+            "name": "remove_marked_paragraph_5",
+            "replace": ""
+        },
+        "remove_marked_paragraph_6":
+        {
+            "find": "^([ \\t]*)#d6==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d6<==",
+            "name": "remove_marked_paragraph_6",
+            "replace": ""
+        },
+        "remove_marked_paragraph_7":
+        {
+            "find": "^([ \\t]*)#d7==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d7<==",
+            "name": "remove_marked_paragraph_7",
+            "replace": ""
+        },
+        "remove_marked_paragraph_8":
+        {
+            "find": "^([ \\t]*)#d8==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d8<==",
+            "name": "remove_marked_paragraph_8",
+            "replace": ""
+        },
+        "remove_marked_paragraph_9":
+        {
+            "find": "^([ \\t]*)#d9==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d9<==",
+            "name": "remove_marked_paragraph_9",
+            "replace": ""
+        },
+        "remove_marked_paragraph_10":
+        {
+            "find": "^([ \\t]*)#d10==>.*(?:\n[ \\t]*(\\S.*|\n*))+#d10<==",
+            "name": "remove_marked_paragraph_10",
+            "replace": ""
+        },
+
+        //------------COMMENT / UNCOMMENT -----------------
+
+        "comment_line":
+            {
+            "find": "^",
+            "name": "comment_line",
+            "replace": "# "
+            },
+
+        "uncomment_line":
+            {
+            "find": "^[ \\t]{0,}# ",
+            "name": "uncomment_line",
+            "replace": ""
+            },
+
+
+        "comment_lines_of_code":
+        // Comment all the lines of code with the symbol "#c" instead of just
+        // "#".
+        //
+        // Command to mark or flag lines of code that I prefer to comment
+        // while writing the code because I don't want to run them over and
+        // over again in PyCharm everytime I need to run the code while still
+        // writing it, for instance, the creation of a plot that I have
+        // already plotted.
+        //
+        // This command is specially useful when working in PyCharm or
+        // Replit, because everytime that I need to run the code that I'm
+        // writing and working on in PyCharm or Replit, I have to run the
+        // whole code, it is, it's not possible to run just the few lines of
+        // code that I have just written, like in a Jupyter notebook. There,
+        // it is useful not having to run all the previous lines of codes
+        // that produce some outputs (like creating plots, or printing some
+        // information) that are not relevant for the new lines of codes that
+        // I have just written and testing.
+        //
+        // This command will comment each un-commented line (i.e., that
+        // doesn't start with the "#" symbol) and will add the letter "c"
+        // after the comment symbol, #, to indicate that it is a code of
+        // line, so that I can use another command that will find and
+        // uncomment all those lines that start with the "#c" symbol.
+
+        // (Old. I intentionally let the empty lines to also be flagged with
+        // #c, to easily recover the same number of empty lines, either 1, 2
+        // or 3 (using my "uncomment_lines_of_code" command) to comply with
+        // the pythonic rules about the number of empty spaces between
+        // different parts of the code.)
+        //
+        // 1. "^(?![ \\t]*#)(.*)": Find all the lines that don't start with "#" symbol.
+        // 2. Prepend those lines with the "#c" symbol.
+            {
+            "find": "^(?![ \\t]*#)(.*)",
+            "name": "comment_lines_of_code",
+            "replace": "#c \\1"
+            },
+
+        "uncomment_lines_of_code":
+        // Un-comment all the lines that starts with the "#c" symbol.
+            {
+            "find": "^#c([ ]|$)",
+            "name": "uncomment_lines_of_code",
+            "replace": ""
+            },
+
+        "uncomment_empty_lines_with_just_pound_c_symbol":
+        // Uncomment all the empty lines containing only the "#c" symbol at
+        // the begining of the line.
+            {
+            "find": "^#c[ \\t]*$",
+            "name": "uncomment_empty_lines_with_just_pound_c_symbol",
+            "replace": ""
+            },
+
+
+        "comment_end_pound_underscore_lines":
+        // Comment all the lines that END with the "#_" symbol.
+            {
+                "find": "^([ \\t]*)(.*)#_$",
+                "name": "comment_end_pound_underscore_lines",
+                "replace": "\\1# \\2#_"
+            },
+
+        "uncomment_end_pound_underscore_lines":
+        // Uncomment all the lines that END with the "#_" symbol.
+            {
+                "find": "^([ \\t]{0,})# (.*)#_[ \\t]*\n",
+                "name": "uncomment_end_pound_underscore_lines",
+                "replace": "\\1\\2#_\n"
+            },
+
+        "uncomment_begin_pound_underscore_lines":
+        // Un-comment all the lines that START with the "#_" symbol.
+            {
+                "find": "^([ \\t]*)#_ ",
+                "name": "uncomment_begin_pound_underscore_lines",
+                "replace": "\\1"
+            },
+
+        "comment_print_lines":
+        // Comment the lines of codes that print some output on the screen.
+        // (old. The lines are commented with the "#pr" symbol. "pr" stands
+        // for "print".)
+            {
+                "find": "^([ \\t]{0,})print\\(",
+                // ok. "find": "^([ \\t]{0,})print",
+                "name": "comment_print_lines",
+                // old. "replace": "\\1#pr print",
+                "replace": "\\1# print("
+            },
+
+        "uncomment_print_lines":
+        // Uncomment the lines of codes that print some output on the screen.
+        // (old. The lines are commented with the "#pr" symbol. "pr" stands
+        // for "print".)
+            {
+                // old. "find": "^([ \\t]{0,})#pr ",
+                "find": "^([ \\t]{0,})# print\\(",
+                // ok. "find": "^([ \\t]{0,})print",
+                "name": "uncomment_print_lines",
+                "replace": "\\1print("
+            },
+
+        "comment_plot_lines":
+        // Comment the lines of codes that are for plotting something, either
+        // on the screen, or that generates some output file.
+        // The lines are commented with the "#pl" symbol. "pl" stands
+        // for "plot".
+        // "^(?![ \\t]*#)(.*)": Find all the lines that don't start with "#" symbol.
+            {
+            "find": "^(?![ \\t]*#)(.*)",
+            "name": "comment_plot_lines",
+            "replace": "#pl \\1"
+            },
+
+        "uncomment_plot_lines":
+        // Uncomment the lines of codes that are for plotting something, either
+        // on the screen, or that generates some output file.
+        // The lines are commented with the "#pl" symbol. "pl" stands
+        // for "plot".
+            {
+            "find": "^#pl([ ]|$)",
+            "name": "uncomment_plot_lines",
+            "replace": ""
+            },
+
+        "uncomment_empty_lines_with_just_pound_pl_symbol":
+        // Uncomment all the empty lines containing only the "#pl" symbol at
+        // the begining of the line.
+            {
+            "find": "^#pl[ \\t]*$",
+            "name": "uncomment_empty_lines_with_just_pound_pl_symbol",
+            "replace": ""
+            },
+
+        "comment_output_lines":
+        // Comment the lines that correspond to the output from some calculation. Usually those output lines come from the "print()" command.
+        // Prefix the symbol #out to clarify that they are output.
+        // "^(?![ \\t]*#)(.*)": Find all the lines that don't start with "#" symbol.
+        // 2. Prepend those lines with the "#out" symbol.
+            {
+            "find": "^(?![ \\t]*#)(.*)",
+            "name": "comment_plot_lines",
+            "replace": "#out \\1"
+            },
+
+        "comment_begin_old":
+        // Suffix "#old"
+            {
+                "find": "^",
+                "name": "comment_begin_old",
+                "replace": "#old "
+            },
+        "uncomment_begin_old":
+        // Uncomment the lines starting with "#old"
+            {
+            "find": "^#old([ ]|$)",
+            "name": "uncomment_begin_old",
+            "replace": ""
+            },
+
+        "comment_tmp_at_beginning":
+            {
+                "find": "^",
+                "name": "comment_tmp_at_beginning",
+                "replace": "#tmp "
+            },
+
+        "comment_end_pound_nb_lines":
+        // Comment lines that end with the "#nb" symbol.
+        // See description of the use of the "#nb" symbol in
+        // the "suffix_end_pound_nb" command.
+            {
+                // old 1. "find": "^([ \\t]*)(.*)#nb$",
+                // old 1. "replace": "#\\1 \\2#nb"
+
+                "find": "^(.*)#nb$",
+                "name": "comment_end_pound_nb_lines",
+                "replace": "# \\1#nb"
+            },
+
+        "uncomment_end_pound_nb_lines":
+        // Uncomment lines that end with the "#nb" symbol.
+        // See description of the use of the "#nb" symbol in
+        // the "suffix_end_pound_nb" command.
+            {
+                "find": "^([ \\t]{0,})# (.*)#nb[ \\t]*\n",
+                "name": "uncomment_end_pound_nb_lines",
+                "replace": "\\1\\2#nb\n"
+            },
+
+        "comment_end_pound_equal_lines":
+        // Comment all the lines that end with the "#=" symbol.
+        // For description of the use of "#=" flag, see "suffix_end_pound_equal"
+            {
+                "find": "^([ \\t]*)(.*)#=$",
+                "name": "comment_end_pound_equal_lines",
+                "replace": "# \\1\\2#="
+            },
+
+        "uncomment_end_pound_equal_lines":
+        // Comment all the lines that end with the "#=" symbol.
+        // For description of the use of "#=" flag, see "suffix_end_pound_equal"
+            {
+                "find": "^([ \\t]{0,})# (.*)#=\n",
+                "name": "uncomment_end_pound_equal_lines",
+                // "replace": "\\1\\2\n"
+                "replace": "\\1\\2#=\n"
+            },
+
+
+        //----------- CONVERT +/-/* ---------------------
+
+        "convert_minus_to_plus":
+        {
+            "find": "^([ \\t]{0,})-",
+            "name": "convert_minus_to_plus",
+            "replace": "\\1+"
+        },
+        "convert_plus_to_minus":
+        {
+            "find": "^([ \\t]{0,})\\+",
+            "name": "convert_plus_to_minus",
+            "replace": "\\1-"
+        },
+        "convert_minus_to_asterisk":
+        {
+            "find": "^([ \\t]{0,})-",
+            "name": "convert_minus_to_asterisk",
+            "replace": "\\1*"
+        },
+        "convert_asterisk_to_minus":
+        {
+            "find": "^([ \\t]{0,})\\*",
+            "name": "convert_asterisk_to_minus",
+            "replace": "\\1-"
+        },
+        "convert_plus_to_asterisk":
+        {
+            "find": "^([ \\t]{0,})+",
+            "name": "convert_plus_to_asterisk",
+            "replace": "\\1*"
+        },
+        "convert_asterisk_to_plus":
+        {
+            "find": "^([ \\t]{0,})\\*",
+            "name": "convert_asterisk_to_plus",
+            "replace": "\\1+"
+        },
+
+        "split_line_at_50_66_into_two_lines":
+            {
+                "find": "^(.{50,66})\\s+",
+                "name": "split_line_at_50_66_into_two_lines",
+                "replace": "\\1\n"
+            },
+
+        "split_line_at_58_73_into_two_lines":
+            {
+                "find": "^(.{58,73})\\s+",
+                "name": "split_line_at_58_73_into_two_lines",
+                "replace": "\\1\n"
+            },
+
+        "split_line_at_115_130_into_two_lines":
+        // What this regex does (ChatGPT):
+        // It matches the first 115 to 130 characters of a line, as long as
+        // they're followed by at least one whitespace character.
+        // This is often used to find a safe place to break or wrap text
+        // at a word boundary.
+        //
+        // - ^ : Anchors the match to the beginning of a line or string.
+        // - (.{115,130}) : This is a capturing group:
+        //     - . : Matches any single character except newline.
+        //     - {115,130} : Quantifier that says: match between 115 and
+        //                   130 characters.
+        //     - So this group matches the first 115 to 130 characters of
+        //       the line or string.
+        // - \s+ : Matches one or more whitespace characters (space, tab,
+        //         newline, etc.) immediately after the 115–130 characters.
+            {
+                "find": "^(.{115,130})\\s+",
+                "name": "split_line_at_115_130_into_two_lines",
+                "replace": "\\1\n"
+            },
+
+        //-------------- Convert months to numbers -------------------
+
+        //      ENGLISH
+
+
+        "convert_january_to_01":
+        {
+            "find": "(january|January|JANUARY|JAN|Jan|jan)",
+            "name": "convert_january_to_01",
+            "replace": "01"
+        },
+
+        "convert_february_to_02":
+        {
+            "find": "(february|February|FEBRUARY|FEB|Feb|feb)",
+            "name": "convert_february_to_02",
+            "replace": "02"
+        },
+
+        "convert_march_to_03":
+        {
+            "find": "(march|March|MARCH|MAR|Mar|mar)",
+            "name": "convert_march_to_03",
+            "replace": "03"
+        },
+
+        "convert_april_to_04":
+        {
+            "find": "(april|April|APRIL|APR|Apr|apr)",
+            "name": "convert_april_to_04",
+            "replace": "04"
+        },
+
+        "convert_may_to_05":
+        {
+            "find": "(may|May|MAY|MAY|May|may)",
+            "name": "convert_may_to_05",
+            "replace": "05"
+        },
+
+        "convert_june_to_06":
+        {
+            "find": "(june|June|JUNE|JUN|Jun|jun)",
+            "name": "convert_june_to_06",
+            "replace": "06"
+        },
+
+        "convert_july_to_07":
+        {
+            "find": "(july|July|JULY|JUL|Jul|jul)",
+            "name": "convert_july_to_07",
+            "replace": "07"
+        },
+
+        "convert_august_to_08":
+        {
+            "find": "(august|August|AUGUST|AUG|Aug|aug)",
+            "name": "convert_august_to_08",
+            "replace": "08"
+        },
+
+        "convert_september_to_09":
+        {
+            "find": "(september|September|SEPTEMBER|SEP|Sep|sep)",
+            "name": "convert_september_to_09",
+            "replace": "09"
+        },
+
+        "convert_october_to_10":
+        {
+            "find": "(october|October|OCTOBER|OCT|Oct|oct)",
+            "name": "convert_october_to_10",
+            "replace": "10"
+        },
+
+        "convert_november_to_11":
+        {
+            "find": "(november|November|NOVEMBER|NOV|Nov|nov)",
+            "name": "convert_november_to_11",
+            "replace": "11"
+        },
+
+        "convert_december_to_12":
+        {
+            "find": "(december|December|DECEMBER|DEC|Dec|dec)",
+            "name": "convert_december_to_12",
+            "replace": "12"
+        },
+
+        //      FRENCH
+
+         "convert_avril_to_04":
+        {
+            "find": "(avril|Avril|AVRIL|AVR|Avr|avr)",
+            "name": "convert_avril_to_04",
+            "replace": "04"
+        },
+
+        "convert_aout_to_08":
+        {
+            "find": "(aout|août|Aout|Août|AOUT|AOÛT|AOU|AOÛ|Aou|Aoû|aou|aoû)",
+            "name": "convert_aout_to_08",
+            "replace": "08"
+        },
+
+        //-------------- REPLACE ---------------------------
+
+        "convert_print_apostrophe_to_textfile":
+        {
+            "find": "^([ \\t]*)print([ \\t]*)\\('",
+            "name": "convert_print_apostrophe_to_textfile",
+            "replace": "\\1textfile_1.write('\\\\n"
+        },
+        "convert_print_QuotationMark_to_textfile":
+        {
+            "find": "^([ \\t]*)print([ \\t]*)\\(\"",
+            "name": "convert_print_QuotationMark_to_textfile",
+            "replace": "\\1textfile_1.write(\"\\\\n"
+        },
+
+        "capitalize_first_letter_of_words":
+        // Inspired from:
+        // https://github.com/facelessuser/RegReplace/issues/22
+            {
+                "find": "(^|\\n|\\s|-)([\\w])([\\w]+)",
+                "name": "capitalize_first_letter_of_words",
+                "replace": "\\1\\c\\2\\L\\3"
+            },
+
+        "convert_backslash_by_2_backslashes":
+        {
+            "find": "\\\\",
+            "name": "convert_backslash_by_2_backslashes",
+            "replace": "\\\\\\\\"
+        },
+
+        "replace_newline_by_space":
+            {
+                "find": "(^.*)\n",
+                "name": "replace_newline_by_space",
+                "replace": "\\1 "
+            },
+
+        "replace_newline_by_space_if_line_is_not_empty":
+        // (?<!\n): Ensures that the match is not preceded by another newline
+        // (to avoid removing completely empty lines).
+            {
+                "find": "(?<!\n)\n",
+                "name": "replace_newline_by_space_if_line_is_not_empty",
+                "replace": " "
+            },
+
+
+        "replace_newline_by_underscore":
+            {
+                "find": "(^.*)\n",
+                "name": "replace_newline_by_underscore",
+                "replace": "\\1_"
+            },
+
+        "replace_one_newline_by_two_newlines":
+            {
+                "find": "\n",
+                "name": "replace_one_newline_by_two_newlines",
+                "replace": "\n\n"
+            },
+
+        "replace_newline_by_space_and_a_symbol_if_line_is_not_empty":
+        // With the help of ChatGPT. See my chat "Regex" on ChatGPT.
+        // (?<!\n): Ensures that the match is not preceded by another newline
+        // (to avoid removing completely empty lines).
+            {
+                "find": "(?<!\n)\n",
+                "name": "replace_newline_by_space_and_a_symbol_if_line_is_not_empty",
+                // Below, the symbol of my choice to replace is "|", but I can
+                // replace it by any other symbol that I may want.
+                "replace": " | "
+            },
+
+
+        "replace_period_by_newline":
+        {
+            "find": "\\.[\\s\\t]+",
+            "name": "replace_period_by_newline",
+            "replace": ".\n"
+        },
+
+        "replace_questionmark_by_newline":
+        {
+            "find": "\\?[\\s\\t]+",
+            "name": "replace_questionmark_by_newline",
+            "replace": "?\n"
+        },
+
+        "replace_exclamationmark_by_newline":
+        {
+            "find": "\\![\\s\\t]+",
+            "name": "replace_exclamationmark_by_newline",
+            "replace": "!\n"
+        },
+
+        "replace_a_given_symbol_at_end_of_line_by_newline":
+            {
+                // Below, the symbol of my choice to replace is "|", but I can replace
+                // it by any other symbol that I may want.
+                "find": "\\|[ \\t]*$",
+                "name": "replace_a_given_symbol_at_end_of_line_by_newline",
+                "replace": "\n"
+            },
+
+        "replace_a_given_symbol_by_newline":
+        {
+            // Below, the symbol of my choice to replace is "|", but I can replace
+            // it by any other symbol that I may want.
+            "find": " \\|[ ]*",
+            "name": "replace_a_given_symbol_by_newline",
+            "replace": "\n"
+        },
+
+        "replace_2_or_more_spaces_between_words_by_1_tab":
+        {
+            "find": "[ ]{2,}",
+            "name": "replace_2_or_more_spaces_between_words_by_1_tab",
+            "replace": "\\t"
+        },
+        "replace_4_spaces_by_1_tab":
+        {
+            "find": "([ ]{4})",
+            "name": "replace_4_spaces_by_1_tab",
+            "replace": "\\t"
+        },
+        "replace_1_tab_by_4_spaces":
+        {
+            "find": "\\t",
+            "name": "replace_1_tab_by_4_spaces",
+            "replace": "    "
+        },
+        "replace_1_tab_by_1_space":
+        {
+            "find": "\\t",
+            "name": "replace_1_tab_by_1_space",
+            "replace": " "
+        },
+        "replace_tab_by_semicolon":
+        {
+            "find": "\\t",
+            "name": "replace_tab_by_semicolon",
+            "replace": ";"
+        },
+        "replace_tab_by_newline":
+        {
+            "find": "\\t",
+            "name": "replace_tab_by_newline",
+            "replace": " \n"
+        },
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab":
+        {
+            "find": "^(\\s*)\\t(\\s*)",
+            "name": "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+            "replace": "\\1    \\2"
+        },
+        "replace_spaces_between_words_by_underscore":
+        {
+            "find": " ",
+            "name": "replace_spaces_between_words_by_underscore",
+            "replace": "_"
+        },
+        "replace_anynumber_of_spaces_between_words_by_1_underscore":
+        {
+            "find": "[ ]+",
+            "name": "replace_anynumber_of_spaces_between_words_by_1_underscore",
+            "replace": "_"
+        },
+        "replace_anynumber_underscores_by_one_only":
+        {
+            "find": "[_]+",
+            "name": "replace_anynumber_underscores_by_one_only",
+            "replace": "_"
+        },
+        "replace_comma_by_underscore":
+        {
+            "find": "\\,",
+            "name": "replace_comma_by_underscore",
+            "replace": "_"
+        },
+        "replace_comma_by_NoSpace":
+        {
+            "find": "\\,",
+            "name": "replace_comma_by_NoSpace",
+            "replace": ""
+        },
+        "replace_TwoPoints_by_TwoUnderscores":
+        {
+            "find": "\\:",
+            "name": "replace_TwoPoints_by_TwoUnderscores",
+            "replace": "__"
+        },
+        "replace_TwoPoints_by_Underscores":
+        {
+            "find": "\\:",
+            "name": "replace_TwoPoints_by_Underscores",
+            "replace": "_"
+        },
+        "replace_TwoPoints_by_NoSpace":
+        {
+            "find": "\\:",
+            "name": "replace_TwoPoints_by_NoSpace",
+            "replace": ""
+        },
+        "replace_TwoPoints_by_underscore_dash_underscore":
+        {
+            "find": "\\:",
+            "name": "replace_TwoPoints_by_underscore_dash_underscore",
+            "replace": "_-_"
+        },
+        "replace_TwoPoints_by_dash":
+        {
+            "find": "\\:",
+            "name": "replace_TwoPoints_by_dash",
+            "replace": "-"
+        },
+        "remove_right_curly_bracket_at_end_of_line":
+        {
+            "find": "}$",
+            "name": "remove_right_curly_bracket_at_end_of_line",
+            "replace": ""
+        },
+        "remove_left_curly_bracket_in_line":
+        {
+            "find": "^(.*){'",
+            "name": "remove_left_curly_bracket_in_line",
+            "replace": "\\1"
+        },
+        "replace_open_square_bracket_by_newline_line_newline":
+        {
+            "find": "^\\[",
+            "name": "replace_open_square_bracket_by_newline_line_newline",
+            "replace": "\n-----------\n["
+        },
+
+        //-------------- SUFFIX/ PREFIX --------------------
+
+        "suffix_end_pound_equal":
+        // Mark or flag lines of code that I want to KEEP in the final version
+        // of the code that I'm going to share with colleagues, or to commit to
+        // Git-Github, but that I prefer to comment (using
+        // "comment_end_pound_equal_lines" and "uncomment_end_pound_equal_lines")
+        // while
+        // writing the code because I don't want to run them over and over
+        // again everytime I have to run the code while still writing it,
+        // for instance, the creation of a plot that I have already plotted.
+
+        // This command is specially useful when working in PyCharm, because
+        // everytime that I need to run the code that I'm writing and working
+        // on in PyCharm, I have to run the whole code, it is, it's not possible
+        // to run
+        // just the few lines of code that I have just written, like in a
+        // Jupyter notebook. There, it is useful not having to run all the
+        // previous lines of codes that produce some outputs (like creating
+        // plots, or printing some information) that are not relevant
+        // for the new lines of codes that I have just written and testing.
+            {
+                "find": "$",
+                "name": "suffix_end_pound_equal",
+                "replace": "  #="
+            },
+
+        "suffix_end_pound_underscore":
+        // Mark to flag, lines of code, comments, and commented outputs, that
+        // I want to DELETE in the final version of the code that I'm going
+        // to share with colleagues, or to commit to Git-Github.
+
+        // Those lines are usually simple python commands to check that the
+        // code is working properly, or to debug the code, or to print or
+        // plot intermediate steps to better understand the code, the data,
+        // or the computations I'm doing, but that they are not relevants.
+            {
+                // old. "find": "\n",
+                "find": "$",
+                "name": "suffix_end_pound_underscore",
+                "replace": "  #_"
+            },
+
+
+        "suffix_end_pound_nb":
+        // Mark or flag lines of code that I want to COMMENT in the final
+        // version of the code that I'm going to share with colleagues, or to
+        // commit to Git-Github.
+        //
+        // This command is useful when transforming Jupyter notebooks to
+        // plain text python codes. When working in any given project using
+        // Jupyter notebooks, I usually write down a lot of simple lines of
+        // code just to explore the data, or to debug my code, etc. But when
+        // transforming that Jupyter notebooks to plain-text python file to
+        // generate the final python code for delivery or production, I
+        // prefer to COMMENT all those irrelevant lines of code used to
+        // explore the data or to debug my code.
+        //
+        // So a simple strategy I do is to flag all those lines by adding the
+        // "#nb" symbol ("nb" stands for "notebook") at the end each line
+        // while working on the Jupyter notebook (or using the regex command
+        // "suffix_end_pound_nb" if I'm working in the plain-text version of
+        // the python file), so that I can easily comment them in the final
+        // version of the code, by using my "comment_end_pound_nb_lines"
+        // regex command.
+        //
+        // On the other hand, while studying the "Hands-On Machine Learning
+        // with Scikit-Learn, Keras, and TensorFlow" book by Aurélien Géron,
+        // I flag with the "#nb" symbol all the lines of code that are NOT
+        // the optimal implementation to do machine-learning things, it is,
+        // the author sometimes explain different ways to perform a
+        // computation, starting by writing the function or the python class,
+        // and later showing how to do the same thing by using a built-in
+        // Scikit-Learn function or module. So, for the written function or
+        // the python class is not necessary the optimal implementation
+        // compared with a built-in Scikit-Learn function or module, then I
+        // prefer to flag those non optimal lines of code with the "#nb"
+        // symbol so that I can easily comment them whenever needed.
+            {
+                // old. "find": "\n",
+                "find": "$",
+                "name": "suffix_end_pound_nb",
+                "replace": "  #nb"
+            },
+
+
+        "suffix_end_apostrophe":
+            {
+                "find": "$",
+                "name": "suffix_end_apostrophe",
+                "replace": "'"
+            },
+
+        "prefix_begin_dash":
+        {
+            // old. "find": "^([ \\t]*)([^\\-\\+\\*\\n])",
+            // old but ok. "find": "^([ \\t]*)([a-zA-Z0-9\"'])",
+            "find": "^([ \\t]*)(.)",
+            "name": "prefix_begin_dash",
+            "replace": "\\1- \\2"
+        },
+
+        "prefix_begin_plus":
+        {
+            // old: "find": "^([ \\t]*)([^\\-\\+\\*\\n])",
+            "find": "^([ \\t]*)([a-zA-Z0-9\"'])",
+            "name": "prefix_begin_plus",
+            "replace": "\\1+ \\2"
+        },
+
+        "prefix_begin_asterisk":
+        {
+            "find": "^([ \\t]*)([a-zA-Z0-9\"'])",
+            "name": "prefix_begin_asterisk",
+            "replace": "\\1* \\2"
+        },
+
+        "suffix_anything":
+        // Regex to suffix at the end of lines any particular thing
+        // that I may want. Just change the "replace" line for what I want.
+        {
+            "find": "$",
+            "name": "suffix_anything",
+            "replace": "  #hp"
+        },
+
+        //------------- NON ASCII CHARACTERS ---------------
+
+        "flag_non_ASCII_characters":
+        {
+            "find": "[^\\x00-\\x7F]",
+            "name": "flag_non_ASCII_characters",
+            "replace": "-ZZ-"
+        },
+        "replace_accented_letters_A":
+        {
+            "find": "[ÁÀÄÂÃÅ]",
+            "name": "replace_accented_letters_A",
+            "replace": "A"
+        },
+
+        "replace_accented_letters_a":
+        {
+            "find": "[áàäâã]",
+            "name": "replace_accented_letters_a",
+            "replace": "a"
+        },
+
+        "replace_accented_letters_a_2":
+        // This "à" seems to be composed by two separated symbols: the letter "e"
+        // and the accent symbol. To resolve the issue I used the same
+        // strategy than in "replace_accented_letters_e_2".
+        {
+            "find": "à",
+            "name": "replace_accented_letters_a_2",
+            "replace": "a"
+        },
+
+        "replace_accented_letters_A_2":
+        // See "replace_accented_letters_a_2" and "replace_accented_letters_e_2".
+        {
+            "find": "À",
+            "name": "replace_accented_letters_A_2",
+            "replace": "A"
+        },
+
+        "replace_accented_letters_E":
+        {
+            "find": "[ÉÈËÊ]",
+            "name": "replace_accented_letters_E",
+            "replace": "E"
+        },
+        "replace_accented_letters_e":
+        // These accented letters seem to be a single symbol, it is, the
+        // accent symbol is part of the accented letter itself.
+        {
+            "find": "[éèëê]",
+            "name": "replace_accented_letters_e",
+            "replace": "e"
+        },
+        "replace_accented_letters_e_2":
+        // This "é" seems to be composed by two separated symbols: the letter "e"
+        // and the accent symbol. For this reason, my standard
+        // "replace_accented_letters_e" command fails
+        // to find and replace this particular "e", even if it looks exactly the
+        // the same than the one on the "replace_accented_letters_e" command!
+        // To correct this issue I have
+        // created this additional command and removed the square
+        // parenthesis, "[]", in the "find" line, to only find this composed
+        // symbol. In other words, if I put the square parenthesis, then the
+        // command will look for the letter "e" OR the accent symbol, instead
+        // of looking for the combination "é" only.
+        {
+            "find": "é",
+            "name": "replace_accented_letters_e_2",
+            "replace": "e"
+        },
+        "replace_accented_letters_E_2":
+        // About this command, see my notes on the command "replace_accented_letters_e_2".
+        {
+            "find": "É",
+            "name": "replace_accented_letters_E_2",
+            "replace": "E"
+        },
+
+
+        "replace_accented_letters_I":
+        {
+            "find": "[ÍÌÏÎ]",
+            "name": "replace_accented_letters_I",
+            "replace": "I"
+        },
+        "replace_accented_letters_i":
+        {
+            "find": "[íìïî]",
+            "name": "replace_accented_letters_i",
+            "replace": "i"
+        },
+        "replace_accented_letters_O":
+        {
+            "find": "[ÓÒÖÔ]",
+            "name": "replace_accented_letters_O",
+            "replace": "O"
+        },
+        "replace_accented_letters_o":
+        {
+            "find": "[óòöô]",
+            "name": "replace_accented_letters_o",
+            "replace": "o"
+        },
+        "replace_accented_letters_U":
+        {
+            "find": "[ÚÙÜÛ]",
+            "name": "replace_accented_letters_U",
+            "replace": "U"
+        },
+        "replace_accented_letters_u":
+        {
+            "find": "[úùüû]",
+            "name": "replace_accented_letters_u",
+            "replace": "u"
+        },
+
+        "replace_C_francais_1":
+        {
+            "find": "Ç",
+            "name": "replace_C_francais_1",
+            "replace": "C"
+        },
+        "replace_c_francais_1":
+        {
+            "find": "ç",
+            "name": "replace_c_francais_1",
+            "replace": "c"
+        },
+        "replace_C_francais_2":
+        {
+            "find": "Ç",
+            "name": "replace_C_francais_2",
+            "replace": "C"
+        },
+        "replace_c_francais_2":
+        {
+            "find": "ç",
+            "name": "replace_c_francais_2",
+            "replace": "c"
+        },
+
+        "replace_OE_francais":
+        {
+            "find": "Œ",
+            "name": "replace_OE_francais",
+            "replace": "OE"
+        },
+        "replace_oe_francais":
+        {
+            "find": "œ",
+            "name": "replace_oe_francais",
+            "replace": "oe"
+        },
+        "replace_AE_francais":
+        {
+            "find": "Æ",
+            "name": "replace_AE_francais",
+            "replace": "AE"
+        },
+        "replace_ae_francais":
+        {
+            "find": "æ",
+            "name": "replace_ae_francais",
+            "replace": "ae"
+        },
+        "replace_n_espanol":
+        {
+            "find": "ñ",
+            "name": "replace_n_espanol",
+            "replace": "n"
+        },
+        "replace_openquestion_espanol":
+        {
+            "find": "¿",
+            "name": "replace_openquestion_espanol",
+            "replace": "?"
+        },
+        "replace_vertical_bar_by_underscore":
+        {
+            "find": "\\|",
+            "name": "replace_vertical_bar_by_underscore",
+            "replace": "_"
+        },
+        "replace_slash_by_underscore":
+        {
+            "find": "/",
+            "name": "replace_slash_by_underscore",
+            "replace": "_"
+        },
+        "replace_b_deutsch":
+        {
+            "find": "ß",
+            "name": "replace_b_deutsch",
+            "replace": "b"
+        },
+        "replace_apostrophe_by_underscore":
+        {
+            "find": "['`’‘]",
+            "name": "replace_apostrophe_by_underscore",
+            "replace": "_"
+        },
+        "replace_symbol_percent_by_word":
+        {
+            "find": "%",
+            "name": "replace_symbol_percent_by_word",
+            "replace": "percent"
+        },
+        "remove_symbol_percent":
+        {
+            "find": "%",
+            "name": "remove_symbol_percent",
+            "replace": ""
+        },
+        "replace_symbol_and_by_word":
+        {
+            "find": "&",
+            "name": "replace_symbol_and_by_word",
+            "replace": "and"
+        },
+        "replace_underscore_dash_underscore_by_dash":
+        {
+            "find": "_\\-_",
+            "name": "replace_underscore_dash_underscore_by_dash",
+            "replace": "-"
+        },
+
+        "replace_special_dash_by_regular_dash_1":
+        // This dash symbol "–" is actually an unusually dash that I have
+        // found in text from some files or websites. So I have created this
+        // command to transform it to the "regular" dash symbol.
+        // I added the number one at the end of the command name to add more
+        // unusually dash symbols I may find in the future: I will call
+        // the addition commands as "replace_special_dash_by_regular_dash_2"
+        // and so on.
+        {
+            "find": "–",
+            "name": "replace_special_dash_by_regular_dash_1",
+            "replace": "-"
+        },
+
+        //----------------- DIVERSE ------------------------
+
+        "convert_M_by_Fanny":
+        {
+            "find": "] M: ",
+            "name": "convert_M_by_Fanny",
+            "replace": "] Fanny: "
+        },
+
+        "convert_Fanny_fullname_by_just_Fanny":
+        {
+            "find": "] Fanny Van de Poel: ",
+            "name": "convert_Fanny_fullname_by_just_Fanny",
+            "replace": "] Fanny: "
+        },
+
+        //----------------- hyperopt PT, TF-----------------
+
+        "convert_hyperopt_best_model":
+        {
+            "find": ": (0|1|2|3|4|5|6)(,|})",
+            "name": "convert_hyperopt_best_model",
+            "replace": ": [\\1]\\2"
+        },
+        "convert_config_file_hyperopt_PT_to_TF":
+        {
+            "find": "^[ \t]*(\"numvalues\"|\"minnormalizedvalue\"|\"maxnormalizedvalue\"|\"Operation\"|\"name\":\"average\"|\"numvaluesforoperation\").*\n",
+            "name": "convert_config_file_hyperopt_PT_to_TF",
+            "replace": ""
+        },
+        "convert_config_file_hyperopt_PT_to_TF_delays_false":
+        {
+            "find": "^([ \t]*)\"delay\": 0,",
+            "name": "convert_config_file_hyperopt_PT_to_TF_delays_false",
+            "replace": "\\1\"delay\": false"
+        },
+        "convert_config_file_hyperopt_PT_to_TF_delays_true":
+        {
+            "find": "^([ \t]*)\"delay\": (24|48|72),",
+            "name": "convert_config_file_hyperopt_PT_to_TF_delays_true",
+            "replace": "\\1\"delay\": true"
+        },
+        "remove_var_names_in_trials_list_scores_hyperopt_A":
+        {
+            "find": "(\t{|, )'.{4,35}_isi': ",
+            "name": "remove_var_names_in_trials_list_scores_hyperopt_A",
+            "replace": "\t"
+        },
+        "remove_var_names_in_trials_list_scores_hyperopt_B":
+        {
+            "find": "(, 'loss_func': '|', 'nn_model': '|', 'window_size': )",
+            "name": "remove_var_names_in_trials_list_scores_hyperopt_B",
+            "replace": "\t"
+        },
+        "remove_var_values_in_trials_list_scores_hyperopt":
+        {
+            "find": "(': 0, '|': 1, '|': 'mae', '|': 'mse', '|': 'huber', '|': 'MLP', '|': 'LSTM', '|': 'GRU', '|': 24|': 48|': 72|': 96|': 120|': 144|': 168|': 240)",
+            "name": "remove_var_values_in_trials_list_scores_hyperopt",
+            "replace": "\t"
+        },
+        "replace_semicolon_by_space_in_hyperopt_outfile":
+        {
+            // Trim this expression to fit the number of hyperopt variables
+            "find": "(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d)$",
+            "name": "replace_semicolon_by_space_in_hyperopt_outfile",
+            "replace": "\\1 \\2 \\3 \\4 \\5 \\6 \\7 \\8 \\9 \\10 \\11 \\12 \\13 \\14 \\15 \\16 \\17 \\18 \\19 \\20 \\21 \\22 \\23 \\24 \\25 \\26 \\27 \\28 \\29"
+            // Using the Find/Replace window of Sublime the transformation above must be written as:
+            // Find:
+            // (\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d);(\d)$
+            // Replace
+            // $1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17 $18 $19 $20 $21 $22 $23 $24 $25 $26 $27 $28 $29
+        },
+        "remove_semicolons_in_hyperopt_outfile":
+        {
+            // Trim this expression to fit the number of hyperopt variables
+            "find": "(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d);(\\d)$",
+            "name": "remove_semicolons_in_hyperopt_outfile",
+            "replace": "\\1\\2\\3\\4\\5\\6\\7\\8\\9\\10\\11\\12\\13\\14\\15\\16\\17\\18\\19\\20\\21\\22\\23\\24\\25\\26\\27\\28\\29"
+        },
+        "add_semicolon_between_digits_for_hyperopt_outfile":
+        {
+            // Trim this expression to fit the number of hyperopt variables
+            "find": "(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)$",
+            "name": "add_semicolon_between_digits_for_hyperopt_outfile",
+            "replace": "\\1;\\2;\\3;\\4;\\5;\\6;\\7;\\8;\\9;\\10;\\11;\\12;\\13;\\14;\\15;\\16;\\17;\\18;\\19;\\20;\\21;\\22;\\23;\\24;\\25;\\26;\\27;\\28;\\29"
+        },
+
+        //----------- Citibank check-saving statements -----
+
+        "citi_check_remove_newline_for_incomes":
+        {
+            "find": "\n^(Transfer From Savings Plus .*|Mobile Deposit.*|ACH Electronic Credit .*)\n",
+            "name": "citi_check_remove_newline_for_incomes",
+            "replace": " \\1\t\t"
+        },
+        "citi_check_remove_newline_for_outcomes":
+        {
+            "find": "\n^([A-Z].*)\n(.*)",
+            "name": "citi_check_remove_newline_for_outcomes",
+            "replace": " \\1\t\\2\t"
+        },
+        "citi_check_join_line_balance":
+        {
+            "find": "\n^(.{2}[^/])",
+            "name": "citi_check_join_line_balance",
+            "replace": "\t\\1"
+        },
+        "citi_check_tab_after_date":
+        {
+            "find": "^(.{5}) ",
+            "name": "citi_check_tab_after_date",
+            "replace": "\\1\t"
+        },
+        // tmp. "citi_check_add_tab_for_income_amounts_1":
+        // tmp. {
+        // tmp.     "find": "(Transfer From Savings Plus .* \\d*$|Mobile Deposit.*|ACH Electronic Credit .*)",
+        // tmp.     "name": "citi_check_add_tab_for_income_amounts_1",
+        // tmp.     "replace": "\\1\t\t"
+        // tmp. },
+        //
+        // tmp. "citi_check_add_tab_for_outcomes":
+        // tmp. {
+        // tmp.   "find": "^((?!Transfer From Savings Plus).)*$",
+        // tmp.   "name": "citi_check_add_tab_for_outcomes",
+        // tmp.   // "replace": " \\1\t"
+        // tmp.   "replace": "TEST"
+        // tmp. },
+        "citi_saving_remove_newline_for_incomes":
+        {
+            "find": "\n^(Transfer From Checking .*|Interest for \\d{2} days.*|ACH Electronic Credit .*|Mobile Deposit.*)\n",
+            "name": "citi_saving_remove_newline_for_incomes",
+            "replace": " \\1\t\t"
+        },
+        //----------- Citibank credit card (TC) statements -----
+        // For only the lines that are spread into several lines when
+        // pasted in the text file: rearrange them into a single line.
+        "citi_TC_join_spread_lines":
+        {
+            "find": "\n(\\d.*)\n^([A-Z].*)\n",
+            "name": "citi_TC_join_spread_lines",
+            "replace": " \\1 \\2 "
+        },
+        // Remove the second date that corresponds to "Post date" and
+        // a tab space.
+        "citi_TC_remove_2nd_date":
+        {
+            "find": "^(.{5}) .{6}",
+            "name": "citi_TC_remove_2nd_date",
+            "replace": "\\1\t"
+        },
+        // Add a tab space before the amount paid.
+        "citi_TC_tab_before_amount":
+        {
+            "find": "^(.*)( \\$)",
+            "name": "citi_TC_tab_before_amount",
+            "replace": "\\1\t$"
+        },
+
+        //----------- American Airlines statements (tmp)----
+
+        "add_tab_before_dollar":
+        {
+            "find": " \\$",
+            "name": "add_tab_before_dollar",
+            "replace": "\t$"
+        },
+        "remove_second_date":
+        {
+            "find": "^(.{6})(.{8})",
+            "name": "remove_second_date",
+            "replace": "\\1\t"
+        },
+        "remove_newline_1_tmp":
+        {
+            "find": "\n^(\\d.*\\%)\n",
+            "name": "remove_newline_1_tmp",
+            "replace": " \\1 "
+        },
+
+        //------------------- TMP --------------------------
+
+        "tmp_1":
+        {
+            "find": "\n^\\[(.*)\n",
+            "name": "tmp_1",
+            "replace": "\t[\\1 "
+        },
+        "tmp_2":
+        {
+            "find": "\n^[ ](.*)\n",
+            "name": "tmp_2",
+            "replace": " \\1 "
+        },
+
+    }
+}

@@ -1,0 +1,83 @@
+{
+	"history":
+	[
+		{
+			"data":
+			{
+				"args":
+				{
+					/*"text": "1",*/
+					"clipboard": true,
+				},
+				"command": "text_pastry_insert_text",
+				"text": "\\p",
+			},
+			"key": "ceb8141b2b1d05fb9539bc1381b58745",
+			"label": "\\p",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					/*"clipboard": true*/
+					"text": "\\i(5)",
+				},
+				"command": "text_pastry_step",
+				"text": "\\i(5)",
+			},
+			"key": "1926d5718c8992538159493273ef7a57",
+			"label": "\\i(5)",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "\\i(4)",
+				},
+				"command": "text_pastry_step",
+				"text": "\\i(4)",
+			},
+			"key": "35b8d6396cc2da305233b4de177005e4",
+			"label": "\\i(4)",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "\\i(6)",
+				},
+				"command": "text_pastry_step",
+				"text": "\\i(6)",
+			},
+			"key": "b2d0ac712c31cf635e4c352bd38cb5e7",
+			"label": "\\i(6)",
+		},
+		{
+			"data":
+			{
+				"args":
+				{
+					"text": "1",
+				},
+				"command": "text_pastry_step",
+				"text": "\\i",
+			},
+			"key": "1bd7ee1ce72751da4e64129f6d32db41",
+			"label": "\\i",
+		},
+	],
+	"last_command":
+	{
+		"args":
+		{
+			/*"text": "1",*/
+			/*"clipboard": true,*/
+			"text": "1",
+		},
+		"command": "text_pastry_step",
+		"text": "\\i",
+	},
+}

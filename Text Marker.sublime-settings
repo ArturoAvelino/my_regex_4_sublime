@@ -1,0 +1,30 @@
+/*
+	Text Marker user settings in here override the default
+*/
+{
+	"user": {
+		"live": false,
+		"default_colors": [
+			"darkgoldenrod",
+			"gold",
+			"darkmagenta",
+			"greenyellow",
+			"darkolivegreen",
+			"darkslateblue",
+			"darkslategray",
+			"darkviolet",
+			"darkblue",
+			"darkturquoise",
+			"darkgray",
+			"darkkhaki",
+			"darkorange",
+			"hotpink",
+			"darksalmon",
+			"darkseagreen",
+			"lightskyblue",
+			"red",
+			"brown",
+			"yellow",
+		],
+	}
+}

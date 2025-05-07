@@ -1,0 +1,1269 @@
+[
+  {
+    "caption": "Remove: Trailing Spaces",
+    "command": "reg_replace",
+    "args": {"replacements":["trailing_spaces"], "find_only": true
+      }
+  },
+  //--------------- CLEAN CODES ----------------------------
+  {
+    "caption": "Clean python code (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "trailing_spaces",
+
+        // "comment_print_lines",
+        "comment_end_pound_nb_lines",
+
+        // "remove_end_pound_nb_flag",
+        // Remove the #nb flag from the end of the lines.
+        // Note that this command remove just the -flag-, not the line itself.
+
+        "uncomment_begin_pound_underscore_lines",
+
+        "uncomment_end_pound_equal_lines",
+        "remove_end_pound_equal_flag",
+
+        "remove_ln_lines",
+        "remove_marked_paragraph_1",
+        "remove_marked_paragraph_2",
+        "remove_marked_paragraph_3",
+        "remove_marked_paragraph_4",
+        "remove_marked_paragraph_5",
+        "remove_marked_paragraph_6",
+        "remove_marked_paragraph_7",
+        "remove_marked_paragraph_8",
+        "remove_marked_paragraph_9",
+        "remove_old_lines",
+        "remove_tmp_lines",
+        "remove_end_pound_underscore_line_and_newline",
+        "remove_end_pound_underscoreTwo_line",
+
+        // Put the "replace_two_or_more_empty_lines_by_one" at the end of
+        // all other commands.
+        "replace_two_or_more_empty_lines_by_one"]
+      }
+  },
+  {
+    "caption": "Partial clean python code. Don't remove marked lines (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "trailing_spaces",
+        // "comment_print_lines",
+        "comment_end_pound_nb_lines",
+        "comment_end_pound_underscore_lines",
+        "uncomment_begin_pound_underscore_lines",
+        "uncomment_end_pound_equal_lines",
+        "remove_ln_lines",
+        // Put "replace_two_or_more_empty_lines_by_one" at the end of
+        // the group of commands.
+        "replace_two_or_more_empty_lines_by_one"]
+      }
+  },
+  {
+    "caption": "Clean my R code (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "trailing_spaces",
+
+        // "uncomment_begin_pound_underscore_lines",
+
+        "remove_marked_paragraph_1",
+        "remove_marked_paragraph_2",
+        "remove_marked_paragraph_3",
+        "remove_marked_paragraph_4",
+        "remove_marked_paragraph_5",
+        "remove_marked_paragraph_6",
+        "remove_marked_paragraph_7",
+        "remove_marked_paragraph_8",
+        "remove_marked_paragraph_9",
+        "remove_old_lines",
+        "remove_tmp_lines",
+        "remove_end_pound_underscore_line_and_newline",
+        "remove_end_pound_underscoreTwo_line",
+
+        // Put "replace_two_or_more_empty_lines_by_one" at the end of
+        // the group of commands.
+        "replace_two_or_more_empty_lines_by_one"]
+      }
+  },
+
+  //------------------- EMOJI ----------------------------
+
+    {
+    "caption": "Remove emojis by image",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_emojis_by_image"]
+      }
+  },
+
+  {
+    "caption": "Remove emojis",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_emojis"]
+      }
+  },
+
+    {
+    "caption": "Remove emojis: (tests)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_emojis_tests"]
+      }
+  },
+
+  //------------- CONVERT DATE FORMAT TO yyyy_mm_dd_filename.xxx ---------------
+
+    {
+    "caption": "Convert month name to number (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_january_to_01",
+        "convert_february_to_02",
+        "convert_march_to_03",
+        "convert_april_to_04",
+        "convert_may_to_05",
+        "convert_june_to_06",
+        "convert_july_to_07",
+        "convert_august_to_08",
+        "convert_september_to_09",
+        "convert_october_to_10",
+        "convert_november_to_11",
+        "convert_december_to_12",
+
+        "convert_avril_to_04",
+        "convert_aout_to_08"
+      ]
+      }
+  },
+
+  //------------------- REMOVE ----------------------------
+
+  {
+    "caption": "Remove, delete, empty lines (vertical space, whitelines)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_empty_lines"]
+      }
+  },
+  {
+    "caption": "Remove: empty lines and lines with only a dash",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_begin_dash_symbol_of_empty_line",
+        "remove_empty_lines"]
+      }
+  },
+  {
+    "caption": "Remove: lines with a dash only",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_begin_dash_symbol_of_empty_line"]
+      }
+  },
+  {
+    "caption": "Replace: 2 or more consecutive empty lines (vertical space) by 1",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_two_or_more_empty_lines_by_one"]
+      }
+  },
+  {
+    "caption": "Replace: 2 or more consecutive empty lines (vertical space), and dash, by 1",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_begin_dash_symbol_of_empty_line",
+        "replace_two_or_more_empty_lines_by_one"]
+      }
+  },
+  {
+    "caption": "Replace: 3 or more consecutive empty lines (vertical space) by 2",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_three_or_more_empty_lines_by_two"]
+      }
+  },
+  {
+    "caption": "Replace: 3 or more consecutive empty lines (vertical space), and dash, by 2",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_begin_dash_symbol_of_empty_line",
+        "replace_three_or_more_empty_lines_by_two"]
+      }
+  },
+
+  {
+    "caption": "Remove line + newline ending with '#_'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_underscore_line_and_newline"]
+      }
+  },
+  {
+    "caption": "Remove line (but leave line space) ending with '#__'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_underscoreTwo_line"]
+      }
+  },
+
+  {
+    "caption": "Remove '#_' symbol-flag at end of lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_underscore_flag"]
+      }
+  },
+
+  {
+    "caption": "Remove '#=' symbol-flag at end of lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_equal_flag"]
+      }
+  },
+
+  {
+    "caption": "Remove '#nb' symbol-flag at end of lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_nb_flag"]
+      }
+  },
+
+  {
+    "caption": "Remove, delete '-' (dash, minus) symbol at begining of lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_begin_dash_symbol"]
+      }
+  },
+  {
+    "caption": "Remove lines composed by '# In[XX]:' in a converted python code",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_ln_lines"]
+      }
+  },
+  {
+    "caption": "Remove lines starting with '# old|OLD|Old'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_old_lines"]
+      }
+  },
+  {
+    "caption": "Remove lines starting with '# tmp|TMP|Tmp'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_tmp_lines"]
+      }
+  },
+  {
+    "caption": "Remove: paragraph marked with '#dX==>' '#dX<==' (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_marked_paragraph_1",
+        "remove_marked_paragraph_2",
+        "remove_marked_paragraph_3",
+        "remove_marked_paragraph_4",
+        "remove_marked_paragraph_5",
+        "remove_marked_paragraph_6",
+        "remove_marked_paragraph_7",
+        "remove_marked_paragraph_8",
+        "remove_marked_paragraph_9",
+        "remove_marked_paragraph_10"]
+      }
+  },
+  {
+    "caption": "Remove duplicated-repeated words",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_duplicated_words"]
+      }
+  },
+
+  //------------------- CONVERT +/-/* ----------------------------
+
+  {
+    "caption": "Replace: Minus (dash -) to plus (+) sign at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_minus_to_plus"]
+      }
+  },
+  {
+    "caption": "Replace: Plus (+) to minus sign (dash -) at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_plus_to_minus"]
+      }
+  },
+  {
+    "caption": "Replace: Minus (dash -) to asterisk (*) sign at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_minus_to_asterisk"]
+      }
+  },
+  {
+    "caption": "Replace: Asterisk (*) to minus (dash -) sign at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_asterisk_to_minus"]
+      }
+  },
+  {
+    "caption": "Replace: Plus (+) to asterisk (*) sign at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_plus_to_asterisk"]
+      }
+  },
+  {
+    "caption": "Replace: Asterisk (*) to plus (+) sign at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_asterisk_to_plus"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph into statements (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_newline_by_space",
+        "replace_questionmark_by_newline",
+        "replace_exclamationmark_by_newline",
+        "replace_period_by_newline"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph into statements, add whiteline (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_newline_by_space",
+        "replace_questionmark_by_newline",
+        "replace_exclamationmark_by_newline",
+        "replace_period_by_newline",
+        "replace_one_newline_by_two_newlines"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph into statements, add whiteline and dashes (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_newline_by_space",
+        "replace_questionmark_by_newline",
+        "replace_exclamationmark_by_newline",
+        "replace_period_by_newline",
+        "prefix_begin_dash",
+        "replace_one_newline_by_two_newlines"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph at column 50-66 into several commented lines (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+
+        "replace_newline_by_space_if_line_is_not_empty",
+        "replace_one_newline_by_two_newlines",
+
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "split_line_at_50_66_into_two_lines",
+        "comment_line"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph at column 58-73 into several commented lines (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+
+        "replace_newline_by_space_if_line_is_not_empty",
+        "replace_one_newline_by_two_newlines",
+
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+        "split_line_at_58_73_into_two_lines",
+
+        "comment_line"]
+      }
+  },
+
+  {
+    "caption": "Split paragraph at column 115-130 into several commented lines (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+
+        "replace_newline_by_space_if_line_is_not_empty",
+        "replace_one_newline_by_two_newlines",
+
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "split_line_at_115_130_into_two_lines",
+        "comment_line"]
+      }
+  },
+
+
+  //-------------- REPLACE ---------------------------
+
+  // {
+  //   "caption": "Replace: print(' to textfile_1('\\n",
+  //   "command": "reg_replace",
+  //   "args": {
+  //     "replacements": [
+  //       "convert_print_apostrophe_to_textfile"]
+  //   }
+  // },
+  // {
+  //   "caption": "Replace: print(\" to textfile_1(\"\\n",
+  //   "command": "reg_replace",
+  //   "args": {
+  //     "replacements": [
+  //       "convert_print_QuotationMark_to_textfile"]
+  //   }
+  // },
+  {
+    "caption": "Replace: print(\" to textfile_1.write(\"\\n (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_print_apostrophe_to_textfile",
+        "convert_print_QuotationMark_to_textfile"]
+      }
+  },
+  {
+    "caption": "Replace: Capitalize first letter of words",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "capitalize_first_letter_of_words"]
+      }
+  },
+
+  {
+    "caption": "Add one empty line (vertical space, whiteline) between lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_one_newline_by_two_newlines"]
+      }
+  },
+  {
+    "caption": "Replace: 2 or more spaces by 1 tab",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_2_or_more_spaces_between_words_by_1_tab"]
+      }
+  },
+  {
+    "caption": "Replace: 4 spaces by 1 tab",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_4_spaces_by_1_tab"]
+      }
+  },
+  {
+    "caption": "Replace: 1 tab by 4 spaces",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_1_tab_by_4_spaces"]
+      }
+  },
+
+  {
+    "caption": "Replace: 1 tab by 1 space",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_1_tab_by_1_space"]
+      }
+  },
+
+  {
+    "caption": "Replace any number of consecutive spaces between words, by one space only",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_consecutive_spaces"]
+      }
+  },
+
+  {
+    "caption": "Replace: tab by semicolon",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_tab_by_semicolon"]
+      }
+  },
+  {
+    "caption": "Replace: tab by newline",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_tab_by_newline"]
+      }
+  },
+
+  {
+    "caption": "Replace: newline by simple space and a given symbol, if line is not empty",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_newline_by_space_and_a_symbol_if_line_is_not_empty"]
+      }
+  },
+
+  {
+    "caption": "Remove: a symbol located at the end of line",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_a_given_symbol_located_at_end_of_line"]
+      }
+  },
+
+  {
+    "caption": "Replace: a given symbol located at the end of line, by a newline",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_a_given_symbol_at_end_of_line_by_newline"]
+      }
+  },
+
+  {
+    "caption": "Replace: a given symbol by a newline",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_a_given_symbol_by_newline"]
+      }
+  },
+
+  {
+    "caption": "Replace: 1 backslash by 2 backslashes",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_backslash_by_2_backslashes"]
+      }
+  },
+  {
+    "caption": "Replace: tabs at beginning of line by 4 spaces each tab",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab",
+        "replace_tabs_at_beginning_of_line_by_4_spaces_for_each_tab" ]
+      }
+  },
+    {
+    "caption": "Whatsapp: add a line and whiteline between messages",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_open_square_bracket_by_newline_line_newline",
+        "convert_M_by_Fanny",
+        "convert_Fanny_fullname_by_just_Fanny",
+        "replace_two_or_more_empty_lines_by_one"
+        ]
+      }
+  },
+
+  //---------- COMMENT / UNCOMMENT -------------------------
+
+  {
+    "caption": "Comment lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_line"]
+      }
+  },
+  {
+    "caption": "Uncomment lines",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_line"]
+      }
+  },
+
+
+  {
+    "caption": "Comment lines_of_code (prefix #c)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_lines_of_code",
+        "uncomment_empty_lines_with_just_pound_c_symbol"]
+      }
+  },
+  {
+    "caption": "Uncomment lines_of_code (prefix #c)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_lines_of_code"]
+      }
+  },
+
+  {
+    "caption": "Comment lines of code starting with 'print'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_print_lines"]
+      }
+  },
+
+  {
+    "caption": "Uncomment lines of code that start with 'print'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_print_lines"]
+      }
+  },
+
+  {
+    "caption": "Comment lines of code for plotting (prefix #pl)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_plot_lines",
+        "uncomment_empty_lines_with_just_pound_pl_symbol"]
+      }
+  },
+
+  {
+    "caption": "Uncomment lines of code for plotting (prefix #pl)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_plot_lines"]
+      }
+  },
+
+  {
+    "caption": "Comment lines and suffix '#_' at the end of line (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_pound_underscore",
+        "remove_end_pound_underscore_flag_from_empty_lines",
+        "remove_duplicated_end_pound_underscore_flag",
+        "comment_end_pound_underscore_lines"]
+      }
+  },
+
+  {
+    "caption": "Comment lines that have the suffix '#_' at the end of line (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_underscore_flag_from_empty_lines",
+        "remove_duplicated_end_pound_underscore_flag",
+        "comment_end_pound_underscore_lines"]
+      }
+  },
+
+
+  {
+    "caption": "Comment lines and suffix '#=' (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_pound_equal",
+        "remove_end_pound_equal_flag_from_empty_lines",
+        "remove_duplicated_end_pound_equal_flag",
+        "comment_end_pound_equal_lines"]
+      }
+  },
+
+  {
+    "caption": "Comment lines that have the suffix '#=' (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_end_pound_equal_flag_from_empty_lines",
+        "remove_duplicated_end_pound_equal_flag",
+        "comment_end_pound_equal_lines"]
+      }
+  },
+
+  {
+    "caption": "Uncomment lines that have the suffix '#='",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_end_pound_equal_lines"]
+      }
+  },
+
+
+  {
+    "caption": "Comment lines that have the suffix '#nb'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_end_pound_nb_lines"]
+      }
+  },
+
+  {
+    "caption": "Uncomment lines that have the suffix '#nb'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_end_pound_nb_lines"]
+      }
+  },
+
+
+  {
+    "caption": "Comment and prefix '#tmp' at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_tmp_at_beginning"]
+      }
+  },
+
+  {
+    "caption": "Comment output lines (prefix #out)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_output_lines"]
+      }
+  },
+
+  {
+    "caption": "Comment, prefix '#old' at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_begin_old"]
+      }
+  },
+  {
+    "caption": "Uncomment, prefix '#old' at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_begin_old"]
+      }
+  },
+
+
+  //------------- SUFFIX / PREFIX --------------------------
+
+  {
+    "caption": "Append: Prefix '#'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_line"]
+      }
+  },
+
+  {
+    "caption": "Append: Suffix '#_' (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_pound_underscore",
+        "remove_end_pound_underscore_flag_from_empty_lines",
+        "remove_duplicated_end_pound_underscore_flag"]
+      }
+  },
+
+  {
+    "caption": "Append: Suffix '#=' flag (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_pound_equal",
+        "remove_end_pound_equal_flag_from_empty_lines",
+        "remove_duplicated_end_pound_equal_flag"]
+      }
+  },
+
+  {
+    "caption": "Append: Suffix '#nb' flag (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_pound_nb",
+        "remove_end_pound_nb_from_empty_lines",
+        "remove_duplicated_end_pound_nb_flag"]
+      }
+  },
+  {
+    "caption": "Append: Suffix '",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_end_apostrophe"]
+      }
+  },
+
+  {
+    "caption": "Append, create a list: prefix '-' (dash, minus)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "prefix_begin_dash"]
+      }
+  },
+
+  {
+    "caption": "Append, create a list: prefix '-' (dash, minus) and add whitelines (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "prefix_begin_dash",
+        "replace_one_newline_by_two_newlines"]
+      }
+  },
+
+  {
+    "caption": "Append, Add: Prefix '+' (plus)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "prefix_begin_plus"]
+      }
+  },
+  {
+    "caption": "Append, Add: Prefix '*' (asterisk)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "prefix_begin_asterisk"]
+      }
+  },
+  {
+    "caption": "Append: Prefix '# tmp.'",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_tmp_at_beginning"]
+      }
+  },
+  {
+    "caption": "Append: Suffix anything",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "suffix_anything"]
+      }
+  },
+
+  //------------- NON ASCII CHARACTERS ---------------------
+
+  {
+    "caption": "Convert: text to my filename convention (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_accented_letters_A",
+        "replace_accented_letters_A_2",
+        "replace_accented_letters_a",
+        "replace_accented_letters_a_2",
+        "replace_accented_letters_E",
+        "replace_accented_letters_E_2",
+        "replace_accented_letters_e",
+        "replace_accented_letters_e_2",
+        "replace_accented_letters_I",
+        "replace_accented_letters_i",
+        "replace_accented_letters_O",
+        "replace_accented_letters_o",
+        "replace_accented_letters_U",
+        "replace_accented_letters_u",
+        "replace_n_espanol",
+        "replace_openquestion_espanol",
+        "replace_C_francais_1",
+        "replace_c_francais_1",
+        "replace_C_francais_2",
+        "replace_c_francais_2",
+        "replace_OE_francais",
+        "replace_oe_francais",
+        "replace_AE_francais",
+        "replace_ae_francais",
+        "replace_b_deutsch",
+        "replace_vertical_bar_by_underscore",
+        "replace_slash_by_underscore",
+        // "replace_symbol_percent_by_word",
+        "remove_symbol_percent",
+        "replace_symbol_and_by_word",
+        "replace_apostrophe_by_underscore",
+        "replace_comma_by_NoSpace",
+        // "replace_TwoPoints_by_NoSpace",
+        // "replace_TwoPoints_by_Underscores",
+        "replace_TwoPoints_by_dash",
+        "replace_special_dash_by_regular_dash_1",
+        "replace_newline_by_underscore",
+        "replace_1_tab_by_4_spaces",
+        "flag_non_ASCII_characters",
+        "remove_anynumber_of_underscores_at_end_of_line",
+        "replace_anynumber_of_spaces_between_words_by_1_underscore",
+        "replace_anynumber_underscores_by_one_only",
+        "replace_underscore_dash_underscore_by_dash"
+        ]
+      }
+  },
+  {
+    "caption": "Replace: Capitalize and remove spaces between words (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_accented_letters_A",
+        "replace_accented_letters_A_2",
+        "replace_accented_letters_a",
+        "replace_accented_letters_a_2",
+        "replace_accented_letters_E",
+        "replace_accented_letters_E_2",
+        "replace_accented_letters_e",
+        "replace_accented_letters_e_2",
+        "replace_accented_letters_I",
+        "replace_accented_letters_i",
+        "replace_accented_letters_O",
+        "replace_accented_letters_o",
+        "replace_accented_letters_U",
+        "replace_accented_letters_u",
+        "replace_n_espanol",
+        "replace_openquestion_espanol",
+        "replace_C_francais",
+        "replace_c_francais",
+        "replace_OE_francais",
+        "replace_oe_francais",
+        "replace_AE_francais",
+        "replace_ae_francais",
+        "replace_b_deutsch",
+        "replace_apostrophe_by_underscore",
+        "capitalize_first_letter_of_words",
+        "replace_comma_by_NoSpace",
+        // "replace_TwoPoints_by_NoSpace",
+        "replace_TwoPoints_by_Underscores",
+        "flag_non_ASCII_characters",
+        "remove_spaces_between_words"]
+      }
+  },
+  {
+    "caption": "Replace: Capitalize and replace spaces between words by underscore (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_accented_letters_A",
+        "replace_accented_letters_A_2",
+        "replace_accented_letters_a",
+        "replace_accented_letters_a_2",
+        "replace_accented_letters_E",
+        "replace_accented_letters_E_2",
+        "replace_accented_letters_e",
+        "replace_accented_letters_e_2",
+        "replace_accented_letters_I",
+        "replace_accented_letters_i",
+        "replace_accented_letters_O",
+        "replace_accented_letters_o",
+        "replace_accented_letters_U",
+        "replace_accented_letters_u",
+        "replace_n_espanol",
+        "replace_openquestion_espanol",
+        "replace_C_francais",
+        "replace_c_francais",
+        "replace_OE_francais",
+        "replace_oe_francais",
+        "replace_AE_francais",
+        "replace_ae_francais",
+        "replace_b_deutsch",
+        "replace_apostrophe_by_underscore",
+        "capitalize_first_letter_of_words",
+        "replace_comma_by_NoSpace",
+        "replace_TwoPoints_by_NoSpace",
+        "flag_non_ASCII_characters",
+        "replace_spaces_between_words_by_underscore"]
+      }
+  },
+  {
+    "caption": "Replace: flag non ASCII characters",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "flag_non_ASCII_characters"]
+      }
+  },
+  {
+    "caption": "Replace: accented letters by unaccented",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_accented_letters_A",
+        "replace_accented_letters_A_2",
+        "replace_accented_letters_a",
+        "replace_accented_letters_a_2",
+        "replace_accented_letters_E",
+        "replace_accented_letters_E_2",
+        "replace_accented_letters_e",
+        "replace_accented_letters_e_2",
+        "replace_accented_letters_I",
+        "replace_accented_letters_i",
+        "replace_accented_letters_O",
+        "replace_accented_letters_o",
+        "replace_accented_letters_U",
+        "replace_accented_letters_u",
+        "replace_n_espanol",
+        "replace_C_francais",
+        "replace_c_francais",
+        "replace_OE_francais",
+        "replace_oe_francais",
+        "replace_AE_francais",
+        "replace_ae_francais",
+        "replace_b_deutsch"]
+      }
+  },
+
+//////////////////////////////////////////////////////////////////////
+
+
+  //----------------- hyperopt PT, TF-----------------
+
+  {
+    "caption": "(old) Remove: semicolons in hyperopt outfile",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_semicolons_in_hyperopt_outfile"]
+    }
+  },
+  {
+    "caption": "Replace (hyperopt): put numbers in square parenthesis",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_hyperopt_best_model"]
+    }
+  },
+  {
+    "caption": "Convert: config file hyperopt PT to TF (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_config_file_hyperopt_PT_to_TF",
+        "convert_config_file_hyperopt_PT_to_TF_delays_false",
+        "convert_config_file_hyperopt_PT_to_TF_delays_true"]
+    }
+  },
+  {
+    "caption": "Remove (hyperopt): 'trials_list_scores.txt' var names (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_var_names_in_trials_list_scores_hyperopt_A",
+        "remove_var_names_in_trials_list_scores_hyperopt_B",
+        "remove_right_curly_bracket_at_end_of_line"]
+    }
+  },
+  {
+    "caption": "Remove (hyperopt): 'trials_list_scores.txt' create header (+)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_var_values_in_trials_list_scores_hyperopt",
+        "remove_left_curly_bracket_in_line",
+        "remove_right_curly_bracket_at_end_of_line"]
+    }
+  },
+  {
+    "caption": "(old) Add: semicolon between digits (hyperopt)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "add_semicolon_between_digits_for_hyperopt_outfile"]
+    }
+  },
+
+  //----------- Citi checking statements -------------------
+  {
+    "caption": "Citi CHECKING: Reformat for Excel",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "citi_check_remove_newline_for_incomes"
+        , "citi_check_remove_newline_for_outcomes"
+        , "citi_check_join_line_balance"
+        , "citi_check_tab_after_date"
+      ]
+    }
+  },
+
+  //----------- Citi saving statements -------------------
+  {
+    "caption": "Citi SAVING: Reformat for Excel",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "citi_saving_remove_newline_for_incomes",
+        "citi_check_remove_newline_for_outcomes",
+        "citi_check_join_line_balance",
+        "citi_check_tab_after_date"
+      ]
+    }
+  },
+
+  //----------- Citi credit-card (TC) statements -------------------
+  {
+    "caption": "Citi TC: Reformat for Excel",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "citi_TC_join_spread_lines",
+        "citi_TC_remove_2nd_date",
+        "citi_TC_tab_before_amount"
+      ]
+    }
+  },
+
+  //----------- American Airlines statements (tmp)----------
+  {
+    "caption": "AA: Reformat for Excel",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "remove_newline_1_tmp",
+        "add_tab_before_dollar",
+        "remove_second_date"]
+    }
+  },
+
+  //------------- Order alphabetically the selected BNF projets --------------
+
+  // The overall goal is to reorganize all the items in alphabetic order
+  // BNF is the program of qualified professionals by the University of Bern
+
+  {
+    "caption": "BNF 1: replace_newline_by_space_and_a_symbol_if_line_is_not_empty",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_newline_by_space_and_a_symbol_if_line_is_not_empty"]
+      }
+  },
+
+  {
+    "caption": "BNF 2: replace_a_given_symbol_by_newline",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "replace_a_given_symbol_by_newline"]
+      }
+  },
+
+  //------------------ TESTS -------------------------------
+
+  {
+    "caption": "Test: test1",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+
+        // "comment_plot_lines",
+        // "uncomment_empty_lines_with_just_pound_pl_symbol",
+        "uncomment_plot_lines",
+
+      ]
+    }
+  }
+]
