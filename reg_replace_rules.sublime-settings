@@ -87,7 +87,7 @@
 
         "remove_out_lines":
         {
-            "find": "^[ \\t]{0,}#out .*\n",
+            "find": "^[ \\t]{0,}#out.*\n",
             "name": "remove_out_lines",
             "replace": ""
         },
@@ -105,7 +105,7 @@
         },
         "remove_may_lines":
         {
-            "find": "^[ \\t]{0,}#may .*\n",
+            "find": "^[ \\t]{0,}#may.*\n",
             "name": "remove_may_lines",
             "replace": ""
         },
@@ -423,27 +423,34 @@
             },
 
         "comment_print_lines":
-        // Comment the lines of codes that print some output on the screen.
-        // (old. The lines are commented with the "#pr" symbol. "pr" stands
-        // for "print".)
+        // Comment the lines of codes that start with "print".
             {
-                "find": "^([ \\t]{0,})print\\(",
-                // ok. "find": "^([ \\t]{0,})print",
+
+                "find": "^print\\(",
                 "name": "comment_print_lines",
-                // old. "replace": "\\1#pr print",
-                "replace": "\\1# print("
+                "replace": "# print("
+
+                // Old but OK. These command looks and comment "print" even if
+                // it is not at the begining of the line, it is, even if there
+                // is some spaces or tabs between the begining of the line and
+                // the word "print".
+                // "find": "^([ \\t]{0,})print\\(",
+                // "replace": "\\1# print("
             },
 
         "uncomment_print_lines":
-        // Uncomment the lines of codes that print some output on the screen.
-        // (old. The lines are commented with the "#pr" symbol. "pr" stands
-        // for "print".)
+        // Uncomment the lines of codes that start with "print".
             {
-                // old. "find": "^([ \\t]{0,})#pr ",
-                "find": "^([ \\t]{0,})# print\\(",
-                // ok. "find": "^([ \\t]{0,})print",
+                "find": "^# print\\(",
                 "name": "uncomment_print_lines",
-                "replace": "\\1print("
+                "replace": "print("
+
+                // Old but OK. These command looks and comment "print" even if
+                // it is not at the begining of the line, it is, even if there
+                // is some spaces or tabs between the begining of the line and
+                // the word "print".
+                // "find": "^([ \\t]{0,})# print\\(",
+                // "replace": "\\1print("
             },
 
         "comment_plot_lines":

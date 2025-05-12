@@ -30,6 +30,7 @@
         "remove_out_lines",
         "remove_old_lines",
         "remove_tmp_lines",
+        "remove_may_lines",
 
         "remove_ln_lines",
         "remove_marked_paragraph_1",
