@@ -490,7 +490,7 @@
             },
 
         "comment_begin_old":
-        // Suffix "#old"
+        // Prefix "#old"
             {
                 "find": "^",
                 "name": "comment_begin_old",
@@ -509,6 +509,21 @@
                 "find": "^",
                 "name": "comment_tmp_at_beginning",
                 "replace": "#tmp "
+            },
+
+        "comment_begin_may":
+        // Prefix "#may"
+            {
+                "find": "^",
+                "name": "comment_begin_may",
+                "replace": "#may "
+            },
+        "uncomment_begin_may":
+        // Uncomment the lines starting with "#old"
+            {
+            "find": "^#may([ ]|$)",
+            "name": "uncomment_begin_may",
+            "replace": ""
             },
 
         "comment_end_pound_nb_lines":
