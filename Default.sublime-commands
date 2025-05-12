@@ -816,6 +816,14 @@
       }
   },
 
+  {
+    "caption": "Comment output lines (prefix #out)",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_output_lines"]
+      }
+  },
 
   {
     "caption": "Comment and prefix '#tmp' at beginning",
@@ -825,13 +833,12 @@
         "comment_tmp_at_beginning"]
       }
   },
-
   {
-    "caption": "Comment output lines (prefix #out)",
+    "caption": "Uncomment prefix '#tmp' at beginning",
     "command": "reg_replace",
     "args": {
       "replacements": [
-        "comment_output_lines"]
+        "uncomment_tmp_at_beginning"]
       }
   },
 
@@ -852,6 +859,22 @@
       }
   },
 
+  {
+    "caption": "Comment, prefix '#may' at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "comment_begin_may"]
+      }
+  },
+  {
+    "caption": "Uncomment, prefix '#may' at beginning",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "uncomment_begin_may"]
+      }
+  },
 
   //------------- SUFFIX / PREFIX --------------------------
 
@@ -940,14 +963,7 @@
         "prefix_begin_asterisk"]
       }
   },
-  {
-    "caption": "Append: Prefix '# tmp.'",
-    "command": "reg_replace",
-    "args": {
-      "replacements": [
-        "comment_tmp_at_beginning"]
-      }
-  },
+
   {
     "caption": "Append: Suffix anything",
     "command": "reg_replace",

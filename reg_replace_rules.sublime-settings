@@ -415,7 +415,7 @@
             },
 
         "uncomment_begin_pound_underscore_lines":
-        // Un-comment all the lines that START with the "#_" symbol.
+        // Uncomment all the lines that START with the "#_" symbol.
             {
                 "find": "^([ \\t]*)#_ ",
                 "name": "uncomment_begin_pound_underscore_lines",
@@ -505,10 +505,18 @@
             },
 
         "comment_tmp_at_beginning":
+        // Prefix "#tmp"
             {
                 "find": "^",
                 "name": "comment_tmp_at_beginning",
                 "replace": "#tmp "
+            },
+        "uncomment_tmp_at_beginning":
+        // Uncomment the lines starting with "#tmp"
+            {
+                "find": "^#tmp([ ]|$)",
+                "name": "uncomment_tmp_at_beginning",
+                "replace": ""
             },
 
         "comment_begin_may":
