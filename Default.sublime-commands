@@ -5,6 +5,7 @@
     "args": {"replacements":["trailing_spaces"], "find_only": true
       }
   },
+
   //--------------- CLEAN CODES ----------------------------
   {
     "caption": "Clean python code (+)",
