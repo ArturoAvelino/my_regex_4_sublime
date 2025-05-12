@@ -69,6 +69,7 @@
             "name": "replace_three_or_more_empty_lines_by_two",
             "replace": "\n\n"
         },
+
         "remove_consecutive_spaces":
         {
             "find": "\\s{2,}",
@@ -82,22 +83,36 @@
             "name": "remove_consecutive_spaces_but_ignore_newlines",
             "replace": " "
         },
-        "remove_ln_lines":
+
+
+        "remove_out_lines":
         {
-            "find": "^# In\\[.*\n",
-            "name": "remove_ln_lines",
+            "find": "^[ \\t]{0,}#out .*\n",
+            "name": "remove_out_lines",
             "replace": ""
         },
         "remove_old_lines":
         {
-            "find": "^[ \\t]{0,}# (old|OLD|Old).*\n",
+            "find": "^[ \\t]{0,}#(old|OLD|Old).*\n",
             "name": "remove_old_lines",
             "replace": ""
         },
         "remove_tmp_lines":
         {
-            "find": "^[ \\t]{0,}# (tmp|TMP|Tmp).*\n",
+            "find": "^[ \\t]{0,}#(tmp|TMP|Tmp).*\n",
             "name": "remove_tmp_lines",
+            "replace": ""
+        },
+        "remove_may_lines":
+        {
+            "find": "^[ \\t]{0,}#may .*\n",
+            "name": "remove_may_lines",
+            "replace": ""
+        },
+        "remove_ln_lines":
+        {
+            "find": "^# In\\[.*\n",
+            "name": "remove_ln_lines",
             "replace": ""
         },
 
