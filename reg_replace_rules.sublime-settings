@@ -109,6 +109,12 @@
             "name": "remove_may_lines",
             "replace": ""
         },
+        "remove_TODO_lines":
+        {
+            "find": "^[ \\t]{0,}#TODO.*\n",
+            "name": "remove_TODO_lines",
+            "replace": ""
+        },
         "remove_ln_lines":
         {
             "find": "^# In\\[.*\n",
@@ -764,7 +770,7 @@
             "replace": "08"
         },
 
-        //-------------- REPLACE ---------------------------
+        //-------------- REPLACE --------------------------
 
         "convert_print_apostrophe_to_textfile":
         {

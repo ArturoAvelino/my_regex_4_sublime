@@ -12,6 +12,7 @@
     "command": "reg_replace",
     "args": {
       "replacements": [
+
         "trailing_spaces",
 
         // "remove_end_pound_nb_flag",
@@ -24,6 +25,7 @@
 
         "uncomment_plot_lines",
         "uncomment_lines_of_code",
+
         "comment_print_lines",
         "comment_end_pound_nb_lines",
 
@@ -31,8 +33,9 @@
         "remove_old_lines",
         "remove_tmp_lines",
         "remove_may_lines",
-
+        "remove_TODO_lines",
         "remove_ln_lines",
+
         "remove_marked_paragraph_1",
         "remove_marked_paragraph_2",
         "remove_marked_paragraph_3",
@@ -43,13 +46,12 @@
         "remove_marked_paragraph_8",
         "remove_marked_paragraph_9",
 
-
         //old. "remove_end_pound_underscore_line_and_newline",
         //old. "remove_end_pound_underscoreTwo_line",
 
-        // Put the "replace_two_or_more_empty_lines_by_one" at the end of
+        // Put the "replace_three_or_more_empty_lines_by_two" at the end of
         // all other commands.
-        "replace_two_or_more_empty_lines_by_one"]
+        "replace_three_or_more_empty_lines_by_two"]
       }
   },
   {
