@@ -34,6 +34,7 @@
         "remove_tmp_lines",
         "remove_may_lines",
         "remove_TODO_lines",
+        "remove_IDEA_lines",
         "remove_ln_lines",
 
         "remove_marked_paragraph_1",

@@ -115,6 +115,15 @@
             "name": "remove_TODO_lines",
             "replace": ""
         },
+        "remove_IDEA_lines":
+        // Remove lines that start with "#IDEA". I use them to write and idea
+        // directly on the code, but I prefer to remove those lines when sharing
+        // or committing and pushing code to git-github.
+        {
+            "find": "^[ \\t]{0,}#TODO.*\n",
+            "name": "remove_IDEA_lines",
+            "replace": ""
+        },
         "remove_ln_lines":
         {
             "find": "^# In\\[.*\n",
