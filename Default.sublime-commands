@@ -15,9 +15,9 @@
 
         "trailing_spaces",
 
-        // "remove_end_pound_nb_flag",
         // Remove the #nb flag from the end of the lines.
         // Note that this command remove just the -flag-, not the line itself.
+        //old. "remove_flag_end_pound_nb",
 
         //old. "uncomment_begin_pound_underscore_lines",
         //old. "uncomment_end_pound_equal_lines",
@@ -254,11 +254,11 @@
   },
 
   {
-    "caption": "Remove '#nb' symbol-flag at end of lines",
+    "caption": "Remove symbol-flag '#nb' located at end of lines",
     "command": "reg_replace",
     "args": {
       "replacements": [
-        "remove_end_pound_nb_flag"]
+        "remove_flag_end_pound_nb"]
       }
   },
 

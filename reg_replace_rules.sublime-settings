@@ -120,7 +120,7 @@
         // directly on the code, but I prefer to remove those lines when sharing
         // or committing and pushing code to git-github.
         {
-            "find": "^[ \\t]{0,}#TODO.*\n",
+            "find": "^[ \\t]{0,}#IDEA.*\n",
             "name": "remove_IDEA_lines",
             "replace": ""
         },
@@ -224,14 +224,14 @@
                 "replace": "#="
             },
 
-        "remove_end_pound_nb_flag":
+        "remove_flag_end_pound_nb":
         // Remove the #nb flag from the end of the lines.
         // Note that this command remove just the -flag-, not the line itself.
         // See description of the use of the "#nb" symbol in
         // the "suffix_end_pound_nb" command.
             {
                 "find": "#nb[ \\t]*$",
-                "name": "remove_end_pound_nb_flag",
+                "name": "remove_flag_end_pound_nb",
                 "replace": ""
             },
         "remove_end_pound_nb_from_empty_lines":
