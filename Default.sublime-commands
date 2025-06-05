@@ -1146,14 +1146,14 @@
 
   //----------------- hyperopt PT, TF-----------------
 
-  {
-    "caption": "(old) Remove: semicolons in hyperopt outfile",
-    "command": "reg_replace",
-    "args": {
-      "replacements": [
-        "remove_semicolons_in_hyperopt_outfile"]
-    }
-  },
+  // {
+  //   "caption": "(old) Remove: semicolons in hyperopt outfile",
+  //   "command": "reg_replace",
+  //   "args": {
+  //     "replacements": [
+  //       "remove_semicolons_in_hyperopt_outfile"]
+  //   }
+  // },
   {
     "caption": "Replace (hyperopt): put numbers in square parenthesis",
     "command": "reg_replace",
@@ -1192,14 +1192,14 @@
         "remove_right_curly_bracket_at_end_of_line"]
     }
   },
-  {
-    "caption": "(old) Add: semicolon between digits (hyperopt)",
-    "command": "reg_replace",
-    "args": {
-      "replacements": [
-        "add_semicolon_between_digits_for_hyperopt_outfile"]
-    }
-  },
+  // {
+  //   "caption": "(old) Add: semicolon between digits (hyperopt)",
+  //   "command": "reg_replace",
+  //   "args": {
+  //     "replacements": [
+  //       "add_semicolon_between_digits_for_hyperopt_outfile"]
+  //   }
+  // },
 
   //----------- Citi checking statements -------------------
   {
