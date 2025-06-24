@@ -279,7 +279,7 @@
       }
   },
   {
-    "caption": "Remove lines starting with '# old|OLD|Old'",
+    "caption": "Remove lines starting with '#old|OLD|Old'",
     "command": "reg_replace",
     "args": {
       "replacements": [
@@ -287,7 +287,7 @@
       }
   },
   {
-    "caption": "Remove lines starting with '# tmp|TMP|Tmp'",
+    "caption": "Remove lines starting with '#tmp|TMP|Tmp'",
     "command": "reg_replace",
     "args": {
       "replacements": [
