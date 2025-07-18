@@ -1144,6 +1144,19 @@
 //////////////////////////////////////////////////////////////////////
 
 
+  //----------------- Numbers to filenames ---------------------
+
+  {
+    "caption": "Convert numbers id's to filenames",
+    "command": "reg_replace",
+    "args": {
+      "replacements": [
+        "convert_3_to_filename",
+        "convert_4_to_filename"
+      ]
+    }
+  },
+
   //----------------- hyperopt PT, TF-----------------
 
   // {

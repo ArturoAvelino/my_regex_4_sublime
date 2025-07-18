@@ -139,14 +139,20 @@
 		"*.psd",
 		"*.db",
 		"*.lnk",
-		"* alias"
+		"* alias",
+		"*.pptx",
+		"*.html",
+		"*.tgz",
+		"*.pkl",
 	],
 	"folder_exclude_patterns":
 	[
 		"*.app",
-		".ipynb_checkpoints"
+		".ipynb_checkpoints",
+		".idea",
+		".venv"
 	],
-	"dictionary": "Packages/Language - Spanish/es_ES.dic",
+	"dictionary": "Packages/Language - English/en_US.dic",
 	"index_files": true,
 	"font_face": "Menlo",
 	"update_check": false,

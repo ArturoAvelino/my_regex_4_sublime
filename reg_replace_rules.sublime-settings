@@ -1383,6 +1383,27 @@
 
         //----------------- DIVERSE ------------------------
 
+
+        //----------------- Numbers to filenames ---------------------
+
+
+        "convert_3_to_filename":
+        {
+            "find": "^3$",
+            "name": "convert_3_to_filename",
+            "replace": "'capt0004.jpg'"
+        },
+        "convert_4_to_filename":
+        {
+            "find": "^4$",
+            "name": "convert_4_to_filename",
+            "replace": "'capt0005.jpg'"
+
+        },
+
+
+        //----------------- Fanny ------------------------
+
         "convert_M_by_Fanny":
         {
             "find": "] M: ",
